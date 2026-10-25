@@ -1,12 +1,9 @@
-package src.server;
-
+package src.client;
 import java.io.BufferedReader;
 import java.io.PrintStream;
 import java.net.Socket;
-import java.nio.Buffer;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.ArrayList;
 public class Player {
 
     private Socket socket;
@@ -20,6 +17,10 @@ public class Player {
     private PrintStream out;
     private Room room;
     private Player PLAYER = this;
+    private int bullet ;
+    private int score ;
+    private float reload ;
+    
 
     public Player(Socket socket, int id, Server server) {
         this.socket = socket;
@@ -72,6 +73,10 @@ public class Player {
                             SendMessage("Room Create:");
 
                         }
+                        if(command.equals("shoot"))
+                            {
+
+                            }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -170,6 +175,30 @@ public class Player {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public int getBullet() {
+        return bullet;
+    }
+
+    public void setBullet(int bullet) {
+        this.bullet = bullet;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public float getReload() {
+        return reload;
+    }
+
+    public void setReload(float reload) {
+        this.reload = reload;
     }
 
 }
