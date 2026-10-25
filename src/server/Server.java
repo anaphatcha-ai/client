@@ -1,5 +1,4 @@
 package src.server;
-
 import java.io.BufferedReader;
 import java.io.PrintStream;
 import java.net.ServerSocket;
@@ -42,8 +41,6 @@ class Server extends JFrame {
 
         add(scrollPane, BorderLayout.CENTER);
         add(textField, BorderLayout.SOUTH);
-        
-
         StartServer();
         setVisible(true);
     }
