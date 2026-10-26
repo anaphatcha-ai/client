@@ -1,4 +1,4 @@
-package src.client;
+package src.server;
 import java.io.BufferedReader;
 import java.io.PrintStream;
 import java.net.Socket;

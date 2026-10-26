@@ -6,13 +6,11 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.*;
-
 import org.w3c.dom.Text;
 
 class Server extends JFrame {
@@ -22,7 +20,6 @@ class Server extends JFrame {
     private BufferedReader In;
     private PrintStream Out;
     private Server server = this;
-
     private ArrayList<Player> players = new ArrayList<Player>();
     private ArrayList<Room> rooms = new ArrayList<Room>();
     
