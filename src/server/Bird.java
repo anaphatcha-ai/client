@@ -1,4 +1,4 @@
-package src;
+package src.server;
 
 /**
  * นกฝั่ง server: ตำแหน่งคำนวณจากเวลา (บินเส้นตรงแนวนอน)
@@ -25,12 +25,12 @@ public class Bird {
 
     public final int id;
     public final Type type;
-    public final double startX;
-    public final double y;
+    public final int startX;
+    public final int y;
     public final int dir;          // +1 บินไปขวา, -1 บินไปซ้าย
     public final long spawnTimeMs;
 
-    public Bird(int id, Type type, double startX, double y, int dir, long spawnTimeMs) {
+    public Bird(int id, Type type, int startX, int y, int dir, long spawnTimeMs) {
         this.id = id;
         this.type = type;
         this.startX = startX;
@@ -49,8 +49,8 @@ public class Bird {
         return startX + velocityX() * (nowMs - spawnTimeMs) / 1000.0;
     }
 
-    public boolean isOffscreen(long nowMs, int fieldWidth) {
-        double x = xAt(nowMs);
-        return x < -type.radius * 2 || x > fieldWidth + type.radius * 2;
+    public boolean isOffscreen(long now, int w) {
+        double x = xAt(now);
+        return x < -type.radius * 2 || x > w + type.radius * 2;
     }
 }
